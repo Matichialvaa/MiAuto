@@ -30,6 +30,7 @@ public class User_Driver {
 
     public Long getId() {
         //comiteo mati
+        // Comitee cheva (yo)
         return id;
     }
 }
