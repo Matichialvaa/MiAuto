@@ -1,1 +1,2 @@
 # MiAuto
+Miauto busca simplificar y centralizar todas las responsabilidades que conllevan el mantenimiento del auto en una única plataforma, donde se le recordará a los usuarios de manera precisa cuándo y en qué lugar llevar a cabo las tareas necesarias para el mantenimiento del auto. 
