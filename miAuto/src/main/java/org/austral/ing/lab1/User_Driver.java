@@ -9,7 +9,7 @@ public class User_Driver {
     @Column(nullable = false, unique = true)
     private String Username;
 
-    @Column(nullable = false, unique = true)
+    @Id
     private String Email;
 
     @Column
