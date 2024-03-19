@@ -20,16 +20,4 @@ public class User_Driver {
 
     @Column
     private LocalDateTime creationDate;
-    @Id
-    private Long id;
-
-    public void setId(Long id) {
-        //commiteo mati
-        this.id = id;
-    }
-
-    public Long getId() {
-        // Comitee cheva (yo)
-        return id;
-    }
 }
