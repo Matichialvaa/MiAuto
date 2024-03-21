@@ -6,6 +6,9 @@
 
         <class>org.austral.ing.lab1.UserDriver</class>
         <class>org.austral.ing.lab1.UserService</class>
+        <class>org.austral.ing.lab1.Car</class>
+        <class>org.austral.ing.lab1.Familia</class>
+
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>

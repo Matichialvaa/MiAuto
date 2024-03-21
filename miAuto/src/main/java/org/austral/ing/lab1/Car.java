@@ -1,9 +1,12 @@
 package org.austral.ing.lab1;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Car {
@@ -34,6 +37,14 @@ public class Car {
     @Column
     private LocalDateTime fechaVencimientoVTV;
 
+    @ManyToMany
+    @JoinTable(
+            name = "familia_auto",
+            joinColumns = @JoinColumn(name = "patente"),
+            inverseJoinColumns = @JoinColumn(name = "idFamilia")
+    )
+    private List<Familia> familias = new ArrayList<>();
+
 
     public Car(String patente, String marca, String modelo, float kilometraje, int ano, LocalDateTime fechaVencimientoSeguro, LocalDateTime fechaVencimientoVTV) {
         this.patente = patente;
@@ -47,5 +58,9 @@ public class Car {
 
     public Car() {
 
+    }
+
+    public List<Familia> getFamilias() {
+        return familias;
     }
 }
