@@ -21,7 +21,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation 'org.hibernate:hibernate-core:5.6.5.Final'
-    implementation 'org.hsqldb:hsqldb:2.7.1'
+    implementation 'org.hsqldb:hsqldb:2.7.2'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13.2'
