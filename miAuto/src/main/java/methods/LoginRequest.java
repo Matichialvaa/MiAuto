@@ -1,7 +1,7 @@
 package methods;
 
-public class LoginRequest{
-    //obtener los mail y contraseña del usuario que quiere acceder
+public class LoginRequest {
+    // Obtener los mail y contraseña del usuario que quiere acceder
 
     //uso UserDao para chequear si existe el usuario en la base de datos
 

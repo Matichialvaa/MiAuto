@@ -10,10 +10,11 @@ import java.util.List;
 
 @Entity
 public class Car {
+
     @Id
     private String patente;
 
-    //se me ocurrio q el estado va a fluctuar entre 0 y 10 dependiendo como ponderemos las alertas/kilometraje/reparaciones. y q en base al número, se displayee rojo, verde o naranja
+    // Se me ocurrió que el estado va a fluctuar entre 0 y 10 dependiendo como ponderemos las alertas/kilometraje/reparaciones. y q en base al número, se displayee rojo, verde o naranja
     @Column
     private Float estado;
 
@@ -26,11 +27,11 @@ public class Car {
     @Column
     private float kilometraje;
 
-    //año de compra? año desde q se arrancó a usar? año de creación?
+    // Año de compra? Año desde q se arrancó a usar? año de creación?
     @Column
     private int ano;
 
-    //estas dos serian string, o serian datetime? en el caso de datetime, no nos importa la hora sino q el año/mes/dia.
+    // Estas dos serian string, o serian datetime? en el caso de datetime, no nos importa la hora sino q el año/mes/dia.
     @Column
     private LocalDateTime fechaVencimientoSeguro;
 
@@ -59,6 +60,7 @@ public class Car {
     public Car() {
 
     }
+
 
     public List<Familia> getFamilias() {
         return familias;

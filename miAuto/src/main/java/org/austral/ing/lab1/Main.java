@@ -21,7 +21,7 @@ public class Main {
     }
 
     private static void sample1(EntityManager entityManager) {
-        //creo un conductor, una familia y un auto.
+        // Creo un conductor, una familia y un auto.
         Familia familiaPerez = new Familia("Perez");
         Car motomoto = new Car("AA476OV", "Toyota", "Corolla Cross", 1000, 2019,
                 LocalDateTime.of(2023, 12, 1, 0, 0), LocalDateTime.of(2024, 12, 1, 0, 0));
