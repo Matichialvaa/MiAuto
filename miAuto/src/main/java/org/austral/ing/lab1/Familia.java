@@ -16,7 +16,7 @@ public class Familia {
     @ManyToMany(mappedBy = "familias", cascade = CascadeType.ALL)
     private final List<Car> cars = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "drivers", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "familias", cascade = CascadeType.ALL)
     private final List<Car> userDrivers = new ArrayList<>();
 
     public Familia(String apellido) {

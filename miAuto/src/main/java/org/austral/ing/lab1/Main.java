@@ -26,7 +26,7 @@ public class Main {
         Car motomoto = new Car("AA476OV", "Toyota", "Corolla Cross", 1000, 2019,
                 LocalDateTime.of(2023, 12, 1, 0, 0), LocalDateTime.of(2024, 12, 1, 0, 0));
 
-        //genero la relación entre familia y auto, agregando cada uno a la lista del otro.
+        // Genero la relación entre familia y auto, agregando cada uno a la lista del otro.
         familiaPerez.getCars().add(motomoto);
         motomoto.getFamilias().add(familiaPerez);
 
@@ -41,7 +41,7 @@ public class Main {
     }
 
     private static void sample2(EntityManager entityManager) {
-        //creo un conductor, una familia y un auto.
+        // Creo un conductor, una familia y un auto.
         UserDriver maxVerstappen = new UserDriver("max234@gmail.com", "Maxiver123", "Max", "Verstappen", "passwordMax", "buenos aires - la matanza");
 
         //comienza transacción //
