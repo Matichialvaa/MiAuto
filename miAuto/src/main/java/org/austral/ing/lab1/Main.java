@@ -12,7 +12,7 @@ public class Main {
 
         final EntityManager entityManager = factory.createEntityManager();
 
-        sample1(entityManager);
+        //sample1(entityManager);
         sample2(entityManager);
 
         entityManager.close();
