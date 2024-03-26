@@ -29,6 +29,13 @@ public class LoginRequest {
         return user.size() == 1 && user.get(0).equals(password);
     }
 
+    public void responseToRequest(String email, String password) {
+        boolean  isValidated = passwordValidation(email, password);
+        if (isValidated) {
+
+        }
+    }
+
     //uso UserDao para chequear si existe el usuario en la base de datos
 
     //si existe, redirecciono a la página home e inicio al usuario, si no existe muestro mensaje indicando q no existe.

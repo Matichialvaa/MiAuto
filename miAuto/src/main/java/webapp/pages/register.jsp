@@ -35,14 +35,14 @@
     <input type="radio" id="service" name="userType" value="service" onchange="updateUserTypeForm()">
     <label for="service">Service User</label><br>
 
-    <%-- si se quiere registrar como driver, que aparezcan los parametros requeridos como driver --%>
+    <!-- si se quiere registrar como driver, que aparezcan los parametros requeridos como driver -->
     <div id="driverUserFields">
         <label for="driverLicense">Driver License:</label>
         <input type="text" id="driverLicense" name="driverLicense"><br>
         <!-- Add other driver-specific fields as needed -->
     </div>
 
-    <%-- si se quiere registrar como servicio, que aparezcan los parametros requeridos como servicio --%>
+    <!-- si se quiere registrar como servicio, que aparezcan los parametros requeridos como servicio -->
     <div id="serviceUserFields" style="display:none;">
         <label for="serviceArea">Service Area:</label>
         <input type="text" id="serviceArea" name="serviceArea"><br>

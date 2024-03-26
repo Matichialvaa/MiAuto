@@ -1,6 +1,4 @@
 package webapp.pages;
-import org.apache.hadoop.shaded.org.jline.utils.InputStreamReader;
-import org.apache.ivy.Main;
 import java.io.*;
 import static spark.Spark.*;
 
@@ -15,7 +13,7 @@ public class MainWeb {
         webPage("home.jsp");
         webPage("register.jsp");
         webPage("login.jsp");
-
+        System.out.println("The page is updated, please check it.");
     }
     public static void webPage(String jspFilePath) {
 
@@ -27,7 +25,7 @@ public class MainWeb {
             // Renderizar y enviar el contenido del archivo JSP
             return renderJsp(jspFilePath);
         });
-        System.out.println("The page is updated, please check it.");
+
 
     }
     private static String renderJsp(String jspFilePath) {
