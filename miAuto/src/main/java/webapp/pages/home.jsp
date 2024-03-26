@@ -7,7 +7,7 @@
 <body>
 <h1>ya entraste!</h1>
 
-<%-- al apretar este link, se debería llamar la función logoutServlet que te devuelva a la página index --%>
+<!-- al apretar este link, se debería llamar la función logoutServlet que te devuelva a la página index -->
 <a href="logout">Logout</a>
 </body>
 </html>
