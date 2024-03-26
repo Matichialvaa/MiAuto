@@ -13,7 +13,7 @@ public class LoginRequest {
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
     // Obtener los mail y contraseña del usuario que quiere acceder
 
-    private boolean passwordValidation( String email ) {
+    private boolean passwordValidation( String email, String password ) {
         // Crea una session para poder hacer el query.
         Session currentSession = sessionFactory.openSession();
 
@@ -26,7 +26,7 @@ public class LoginRequest {
         currentSession.close();
 
 
-        return user.size() == 1;
+        return user.size() == 1 && user.get(0).equals(password);
     }
 
     //uso UserDao para chequear si existe el usuario en la base de datos
