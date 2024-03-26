@@ -6,7 +6,7 @@ import static spark.Spark.*;
 
 public class MainWeb {
     static String absolutePathXL = "/home/xoaquin-sanchez-varsallona/IdeaProjects/MiAuto/miAuto/src/main/java/webapp/pages/";
-
+    static String absolutePathCheva = "/C:/Users/flopi/Home/Projects/Laboratorio/MiAuto/miAuto/src/main/java/webapp/pages/";
     public static void main(String[] args) {
         port(4567);
         webPage("index.jsp");
@@ -31,7 +31,7 @@ public class MainWeb {
     private static String renderJsp(String jspFilePath) {
         try {
             // Leer el contenido del archivo JSP
-            BufferedReader reader = new BufferedReader(new FileReader(absolutePathXL + jspFilePath));
+            BufferedReader reader = new BufferedReader(new FileReader(absolutePathCheva + jspFilePath));
 
             // Construir el contenido del archivo JSP como una cadena
             StringBuilder content = new StringBuilder();

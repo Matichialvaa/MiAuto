@@ -1,4 +1,8 @@
 package methods;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.IOException;
+import java.sql.*;
 
 public class RegisterRequest {
     // Obtener los mail y contraseña del usuario que quiere acceder
