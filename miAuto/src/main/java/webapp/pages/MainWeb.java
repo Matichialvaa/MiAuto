@@ -1,14 +1,13 @@
 package webapp.pages;
 import org.apache.hadoop.shaded.org.jline.utils.InputStreamReader;
 import org.apache.ivy.Main;
-
 import java.io.*;
-
 import static spark.Spark.*;
 
 
 
 public class MainWeb {
+    static String absolutePathXL = "/home/xoaquin-sanchez-varsallona/IdeaProjects/MiAuto/miAuto/src/main/java/webapp/pages";
     public static void main(String[] args) {
         port(4567);
 
@@ -20,11 +19,12 @@ public class MainWeb {
             // Renderizar y enviar el contenido del archivo JSP
             return renderJsp("index.jsp");
         });
+        System.out.println("The page is updated, please check it.");
     }
     private static String renderJsp(String jspFilePath) {
         try {
             // Leer el contenido del archivo JSP
-            BufferedReader reader = new BufferedReader(new FileReader("C:/Users/Usuario/ayed/projects/MiAuto/miAuto/src/main/java/webapp/pages/index.jsp"));
+            BufferedReader reader = new BufferedReader(new FileReader(absolutePathXL + jspFilePath));
 
             // Construir el contenido del archivo JSP como una cadena
             StringBuilder content = new StringBuilder();
