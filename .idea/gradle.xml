@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/miAuto" />
+            <option value="$PROJECT_DIR$/miAuto/miAutoFrontEnd" />
           </set>
         </option>
       </GradleProjectSettings>
