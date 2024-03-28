@@ -8,25 +8,25 @@
         <!-- URL de chev: jdbc:hsqldb:hsql://localhost/miAutoDB;shutdown=true -->
 
 
-        <class>org.austral.ing.lab1.UserDriver</class>
-        <class>org.austral.ing.lab1.UserService</class>
-        <class>org.austral.ing.lab1.Car</class>
-        <class>org.austral.ing.lab1.Familia</class>
+    <class>org.austral.ing.lab1.UserDriver</class>
+    <class>org.austral.ing.lab1.UserService</class>
+    <class>org.austral.ing.lab1.Car</class>
+    <class>org.austral.ing.lab1.Familia</class>
 
 
-        <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/miAutoDB;shutdown=true"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
+    <properties>
+        <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:/home/matias/Downloads/hsqldb-2.7.2/hsqldb/db;shutdown=true"/>
+        <property name="javax.persistence.jdbc.user" value="sa"/>
+        <property name="javax.persistence.jdbc.password" value=""/>
 
-            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+        <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
 
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.hbm2ddl.auto" value="create"/>
 
 
-        </properties>
+    </properties>
 
     </persistence-unit>
 

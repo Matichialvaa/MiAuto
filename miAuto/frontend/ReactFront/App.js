@@ -5,7 +5,7 @@ import {HomeScreen} from "./HomeScreen";
 import {LoginScreen} from "./LoginScreen"
 import {RegisterScreen} from "./RegisterScreen"
 export default function App() {
-    const Stack = createNativeStackNavigator();
+    const Stack = createNativeStackNavigator(); //used to configure the screens
 
     return (
         <NavigationContainer>

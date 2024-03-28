@@ -23,8 +23,8 @@ repositories {
 
 dependencies {
     // Esta dependencia es utilizada por la aplicación.
-    implementation 'org.hibernate:hibernate-core:5.6.5.Final'
     implementation 'org.hsqldb:hsqldb:2.7.2'
+    implementation 'org.hibernate:hibernate-core:5.6.5.Final'
     implementation 'org.apache.spark:spark-core_2.12:3.5.1'
     implementation 'com.sparkjava:spark-core:2.9.3' // Agregar dependencia Spark Java
 
