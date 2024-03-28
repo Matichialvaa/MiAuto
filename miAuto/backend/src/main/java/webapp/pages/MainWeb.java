@@ -1,12 +1,14 @@
-package webapp.pages;
+package webapp;
+
 import java.io.*;
+
 import static spark.Spark.*;
 
 
-
 public class MainWeb {
-    static String absolutePathXL = "/home/xoaquin-sanchez-varsallona/IdeaProjects/MiAuto/miAuto/src/main/java/webapp/pages/";
-    static String absolutePathCheva = "/C:/Users/flopi/Home/Projects/Laboratorio/MiAuto/miAuto/src/main/java/webapp/pages/";
+    static String absolutePathXL = "/home/xoaquin-sanchez-varsallona/IdeaProjects/MiAuto/miAuto/src/main/java/webapp/";
+    static String absolutePathCheva = "/C:/Users/flopi/Home/Projects/Laboratorio/MiAuto/miAuto/src/main/java/webapp/";
+
     public static void main(String[] args) {
         port(4567);
         webPage("index.jsp");
@@ -15,10 +17,11 @@ public class MainWeb {
         webPage("login.jsp");
         System.out.println("The page is updated, please check it.");
     }
+
     public static void webPage(String jspFilePath) {
 
         // Configurar la ruta GET para manejar la solicitud y enviar el archivo JSP
-        get("/"+jspFilePath, (req, res) -> {
+        get("/" + jspFilePath, (req, res) -> {
             // Establecer el tipo de contenido de la respuesta como HTML
             res.type("text/html");
 
@@ -28,6 +31,7 @@ public class MainWeb {
 
 
     }
+
     private static String renderJsp(String jspFilePath) {
         try {
             // Leer el contenido del archivo JSP
