@@ -1,10 +1,35 @@
-import {Text, View} from "react-native";
+import {Text, TextInput, View} from "react-native";
 import {StyleSheet} from "react-native";
 
 export function Register() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Register Screen</Text>
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Enter your email'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Enter your email'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Enter your email'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Enter your email'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Enter your email'}
+            />
+            <TextInput
+                style={styles.textInput}
+                placeholder={'Enter your email'}
+            />
+
         </View>
     );
 }
@@ -15,6 +40,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 50,
+    },
+    textInput: {
+
     }
 
 });

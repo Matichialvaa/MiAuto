@@ -12,8 +12,7 @@ export function Home({navigation}) {
                 <Text style={styles.subtext}> Login </Text>
             </Pressable>
             <Pressable
-                title={"Register"}
-                onPress={() => navigation.navigate("Register")}
+                onPress={ () => navigation.navigate("Register")}
                 style={styles.button}>
                 <Text style={styles.subtext}> Register </Text>
             </Pressable>
