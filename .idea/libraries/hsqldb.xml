@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="hsqldb">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/hsqldb-2.7.2/hsqldb/doc/verbatim/src" />
+      <root url="file://$USER_HOME$/Downloads/hsqldb-2.7.2/hsqldb/integration/ant/preprocessor/src" />
+      <root url="file://$USER_HOME$/Downloads/hsqldb-2.7.2/hsqldb/integration/extAuthWithSpring/src" />
+      <root url="file://$USER_HOME$/Downloads/hsqldb-2.7.2/hsqldb/src" />
+      <root url="file://$USER_HOME$/Downloads/hsqldb-2.7.2/hsqldb/testrun" />
+    </SOURCES>
+  </library>
+</component>
