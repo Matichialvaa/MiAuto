@@ -1,7 +1,7 @@
 import {Text, View} from "react-native";
 import {StyleSheet} from "react-native";
 
-export function RegisterScreen() {
+export function Register() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Register Screen</Text>

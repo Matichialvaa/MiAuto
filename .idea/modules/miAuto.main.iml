@@ -13,4 +13,9 @@
       </configuration>
     </facet>
   </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Gradle: org.hsqldb:hsqldb:2.7.2" level="project" />
+  </component>
 </module>
