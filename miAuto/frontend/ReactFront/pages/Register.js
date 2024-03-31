@@ -13,7 +13,7 @@ export function Register( {navigation, route}) {
     const [Username, setUsername] = useState('');
     const [Adress, setAdress] = useState('');
 
-
+    //dependiendo si es driver o service, solicito información distinta.
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Register as {userType}</Text>
@@ -45,6 +45,7 @@ export function Register( {navigation, route}) {
                     />
                 </>
             )}
+
             {userType === 'service' && (
                 <TextInput
                     style={styles.input}
@@ -65,6 +66,7 @@ export function Register( {navigation, route}) {
                 value={password}
                 onChangeText={setPassword}
             />
+            {/*ACA IRIA FUNCIÓN QUE REGISTRE AL USUARIO EN BASE DE DATOS */}
             <Pressable style={styles.button} onPress={() => navigation.navigate('Register', { userType })}>
                 <Text style={styles.buttonText}>Register</Text>
             </Pressable>

@@ -22,7 +22,8 @@ export function Login({navigation, route}) {
                 value={password}
                 onChangeText={setPassword}
             />
-            <Pressable style={styles.button} onPress={() => navigation.navigate('Login', { userType: 'driver' })}>
+            {/*ACA IRIA FUNCIÓN QUE LOGINEE AL USUARIO EN LA BDD HSQLDB*/}
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Login', { userType })}>
                 <Text style={styles.buttonText}>Log In</Text>
             </Pressable>
             <Pressable style={styles.button} onPress={() => navigation.navigate('Register', { userType })}>
