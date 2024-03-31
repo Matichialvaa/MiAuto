@@ -4,8 +4,7 @@ import touchableOpacity from "react-native-web/src/exports/TouchableOpacity";
 export function Login({navigation}) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Welcome again! </Text>
-            <Text style={styles.title}>Please enter your email and password to get you started.</Text>
+            <Text style={styles.title}>Log in</Text>
             <TextInput
                 style={styles.textInput}
                 placeholderTextColor={'#fff'}
