@@ -1,4 +1,75 @@
-import {Pressable, Text, TextInput, View} from "react-native";
+import React, { useState } from 'react';
+import { View, TextInput, Text, StyleSheet, Pressable } from 'react-native';
+
+export function Login({navigation, route}) {
+    const {userType} = route.params;
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Login</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+                value={email}
+                onChangeText={setEmail}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Password"
+                secureTextEntry //se ven puntitos
+                value={password}
+                onChangeText={setPassword}
+            />
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Login', { userType: 'driver' })}>
+                <Text style={styles.buttonText}>Log In</Text>
+            </Pressable>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Register', { userType })}>
+                <Text style={styles.buttonText}>Register</Text>
+            </Pressable>
+        </View>
+    );
+
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    title: {
+        fontSize: 24,
+        marginBottom: 20,
+    },
+    input: {
+        width: '100%',
+        borderWidth: 1,
+        borderColor: 'gray',
+        padding: 10,
+        marginBottom: 10,
+    },
+    button: {
+        width: '100%',
+        backgroundColor: '#507cca',
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        marginTop: 10,
+    },
+    buttonText: {
+        color: 'white',
+    },
+});
+
+
+
+
+
+
+/*import {Pressable, Text, TextInput, View} from "react-native";
 import {StyleSheet} from "react-native";
 import touchableOpacity from "react-native-web/src/exports/TouchableOpacity";
 export function Login({navigation}) {
@@ -16,12 +87,12 @@ export function Login({navigation}) {
                 placeholderTextColor={'#fff'}
                 secureTextEntry={true}
             />
-            {/* Esto se tiene que cambiar despues para que se consiga mandar un mail, etc*/}
+            {/* Esto se tiene que cambiar despues para que se consiga mandar un mail, etc}
             <Text >Forgot your password?</Text>
             <Pressable
                 title={"Submit"}
                 style={styles.button}
-                onPress={ () => {/*Se tiene que hacer la conexion a base para validar ese mail con esa contraseña*/}}
+                onPress={ () => {/*Se tiene que hacer la conexion a base para validar ese mail con esa contraseña}}
             >
                 <Text style={styles.buttonText}>Submit</Text>
             </Pressable>
@@ -67,4 +138,4 @@ const styles = StyleSheet.create({
         color: "#fff"
     }
 
-})
+})*/

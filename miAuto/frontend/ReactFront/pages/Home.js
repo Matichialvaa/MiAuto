@@ -1,3 +1,4 @@
+/* ya no se usa más, se usa homeScreen
 import {Text, View, StyleSheet, Button, Pressable} from "react-native"; //react-native -> framework to build native apps using react, library for building user interfaces
 import StyledButton from "../component/StyledButton";
 
@@ -45,4 +46,4 @@ const styles = StyleSheet.create( {
         fontSize: 17,
     }
 
-});
+});*/
