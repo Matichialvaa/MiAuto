@@ -1,9 +1,8 @@
-import {Pressable, Text, TextInput, View} from "react-native";
-import {StyleSheet} from "react-native";
+import {Pressable, StyleSheet, Text, TextInput, View} from "react-native";
 import {useState} from "react";
 
 export function Register( {navigation, route}) {
-    //declaro las variables q voy a pedir luego para registrar al usuario.
+    //declaro las variables que voy a pedir luego para registrar al usuario.
     const { userType } = route.params;
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -11,25 +10,25 @@ export function Register( {navigation, route}) {
     const [serviceName, setServiceName] = useState('');
     const [password, setPassword] = useState('');
     const [Username, setUsername] = useState('');
-    const [Adress, setAdress] = useState('');
+    const [Address, setAddress] = useState('');
     const handleRegister = () => {
         console.log("Attempting to register:", email, password);
 
-        // Dependiendo de el userType, se guarda info distinta
+        // Dependiendo del userType, se guarda info distinta
         const requestBody = userType === 'driver' ? {
             email: email,
             username: Username,
             password: password,
             name: name,
             surname: surname,
-            address: Adress,
+            address: Address,
         } : {
             email: email,
             username: serviceName,
             password: password,
         };
 
-        fetch('http://localhost:9001/register', {
+        fetch('http://localhost:9001/miAutoDB/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,8 +79,8 @@ export function Register( {navigation, route}) {
                     <TextInput
                         style={styles.input}
                         placeholder="address"
-                        value={Adress}
-                        onChangeText={setAdress}
+                        value={Address}
+                        onChangeText={setAddress}
                     />
                 </>
             )}

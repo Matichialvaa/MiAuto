@@ -1,10 +1,9 @@
-package methods;
-
-import org.austral.ing.lab1.UserDriver;
+package java.methods;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.org.austral.ing.lab1.UserDriver;
 
 public class RegisterRequest {
     // Guardado en la bd
@@ -30,5 +29,5 @@ public class RegisterRequest {
 
     // Uso UserDao para chequear si existe el usuario en la base de datos, y si todavía no existe lo agrego a la bdd.
 
-    // Si se registra, lo redirecciono a la página de log in, si no muestro mensaje q el usuario ya existe.
+    // Si se registra, lo redirecciono a la página de login, si no muestro mensaje que el usuario ya existe.
 }

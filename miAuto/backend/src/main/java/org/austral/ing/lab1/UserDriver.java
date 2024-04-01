@@ -1,4 +1,4 @@
-package org.austral.ing.lab1;
+package java.org.austral.ing.lab1;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,24 +13,24 @@ public class UserDriver {
     private long idDriver;
 
     @Column(nullable = false, unique = true)
-    private String Username;
+    public String Username;
 
     @Column(nullable= false, unique = true)
-    private String Email;
+    public String Email;
 
     @Column
-    private String Name;
+    public String Name;
 
     @Column
-    private String Surname;
+    public String Surname;
 
     @Column
-    private String Password;
+    public String Password;
 
     //entiendo q esto lo usariamos para en un futuro buscar mecanicos cerca del domicilio. habria q pensar si no conviene pedir provincia y ciudad, xq si nos pasan "tigre avenida bancalari 1200 barrio las aguas"
     //no nos va a servir tanto. estaría bueno simplificarlo capaz, tipo q sea [provincia][ciudad] o algo asi.
     @Column
-    private String Domicilio;
+    public String Domicilio;
 
     //dicen q hace falta? de ser asi, habría q pasarle al constructor la date del momento.
     //@Column
@@ -55,7 +55,6 @@ public class UserDriver {
         this.Domicilio = Domicilio;
         this.Name = Name;
         this.Surname = Surname;
-
     }
 
     public UserDriver() {
