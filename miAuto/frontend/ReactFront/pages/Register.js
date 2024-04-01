@@ -12,8 +12,48 @@ export function Register( {navigation, route}) {
     const [password, setPassword] = useState('');
     const [Username, setUsername] = useState('');
     const [Adress, setAdress] = useState('');
+    const handleRegister = () => {
+        console.log("Attempting to register:", email, password);
 
-    //dependiendo si es driver o service, solicito información distinta.
+        // Dependiendo de el userType, se guarda info distinta
+        const requestBody = userType === 'driver' ? {
+            email: email,
+            username: Username,
+            password: password,
+            name: name,
+            surname: surname,
+            address: Adress,
+        } : {
+            email: email,
+            username: serviceName,
+            password: password,
+        };
+
+        fetch('http://localhost:9001/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+        })
+            .then(response => {
+                if (response.ok) { // Si se guarda bien en la base de datos, se desbloquea la pantalla
+                    console.log('Registration successful');
+                    navigation.navigate('UnlockedScreen', { userType });
+                } else { // Si no se guarda bien, no se desbloquea la pantalla y se muestra un mensaje de error
+                    console.log('Registration failed');
+                    // Show an error message to the user
+                    alert('Registration failed. Please try again.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+    };
+
+
+    // Dependiendo si es driver o service, solicito información distinta.
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Register as {userType}</Text>
@@ -67,7 +107,7 @@ export function Register( {navigation, route}) {
                 onChangeText={setPassword}
             />
             {/*ACA IRIA FUNCIÓN QUE REGISTRE AL USUARIO EN BASE DE DATOS */}
-            <Pressable style={styles.button} onPress={() => navigation.navigate('Register', { userType })}>
+            <Pressable style={styles.button} onPress={handleRegister}>
                 <Text style={styles.buttonText}>Register</Text>
             </Pressable>
         </View>

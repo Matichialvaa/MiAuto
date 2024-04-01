@@ -1,10 +1,27 @@
 package methods;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.io.IOException;
-import java.sql.*;
+
+import org.austral.ing.lab1.UserDriver;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class RegisterRequest {
+    // Guardado en la bd
+    public static void saveInBd(String email, String username, String password, String name, String surname, String domicilio) {
+        // Crea una session para poder hacer el query.
+        final EntityManagerFactory factory = Persistence.createEntityManagerFactory("miAutoDB");
+        final EntityManager entityManager = factory.createEntityManager();
+
+        UserDriver new_User = new UserDriver(email, username, name, surname, password, domicilio);
+        // Comienza la transacción
+        entityManager.getTransaction().begin();
+        entityManager.persist(new_User);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        // Finaliza la transacción
+        factory.close();
+    }
     // Obtener los mail y contraseña del usuario que quiere acceder
 
     // Si es un driver, pido los otros parámetros que pertenecen a un conductor

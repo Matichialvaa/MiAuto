@@ -6,6 +6,12 @@ export function Login({navigation, route}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // Función que se ejecuta cuando se presiona el botón de "Log In"
+    const handleLogin = () => {
+        console.log("Intento de inicio de sesión con:", email, password);
+        // Llamo a la función que verifica el inicio de sesión
+        // passwordValidation(email, password);
+    };
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Login</Text>

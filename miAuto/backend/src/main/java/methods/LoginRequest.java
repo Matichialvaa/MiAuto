@@ -1,10 +1,14 @@
 package methods;
 
+import org.austral.ing.lab1.UserDriver;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.List;
 
 
@@ -13,11 +17,13 @@ public class LoginRequest {
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
     // Obtener los mail y contraseña del usuario que quiere acceder
 
-    private boolean passwordValidation( String email, String password ) {
+
+    private boolean passwordValidation(String email,String password ) {
         // Crea una session para poder hacer el query.
         Session currentSession = sessionFactory.openSession();
 
         String SQLquery = "select Password from Userdriver where Email = :input";
+
         Query query = currentSession.createSQLQuery(SQLquery).setParameter("input", email);
 
         // Este paso es para ejecutar el query que esta arriba.
@@ -39,4 +45,5 @@ public class LoginRequest {
     //uso UserDao para chequear si existe el usuario en la base de datos
 
     //si existe, redirecciono a la página home e inicio al usuario, si no existe muestro mensaje indicando q no existe.
+
 }
