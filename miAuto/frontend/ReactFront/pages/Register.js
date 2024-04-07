@@ -2,7 +2,7 @@ import {Pressable, StyleSheet, Text, TextInput, View} from "react-native";
 import {useState} from "react";
 
 export function Register( {navigation, route}) {
-    //declaro las variables que voy a pedir luego para registrar al usuario.
+    // Declaro las variables que voy a pedir luego para registrar al usuario.
     const { userType } = route.params;
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -28,7 +28,7 @@ export function Register( {navigation, route}) {
             password: password,
         };
 
-        fetch('http://localhost:9001/miAutoDB/register', {
+        fetch('http://localhost:8081/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

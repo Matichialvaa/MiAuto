@@ -1,4 +1,4 @@
-package java.methods;
+package methods;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

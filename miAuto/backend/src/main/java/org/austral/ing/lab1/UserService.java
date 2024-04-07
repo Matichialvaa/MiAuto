@@ -1,4 +1,4 @@
-package java.org.austral.ing.lab1;
+package org.austral.ing.lab1;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

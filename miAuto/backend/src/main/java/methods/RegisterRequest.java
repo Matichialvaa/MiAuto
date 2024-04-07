@@ -1,9 +1,9 @@
-package java.methods;
+package methods;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.org.austral.ing.lab1.UserDriver;
+import org.austral.ing.lab1.UserDriver;
 
 public class RegisterRequest {
     // Guardado en la bd
