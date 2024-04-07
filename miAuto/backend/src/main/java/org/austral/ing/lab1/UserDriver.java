@@ -65,4 +65,8 @@ public class UserDriver {
     public List<Familia> getFamilias() {
         return familias;
     }
+
+    public String getPassword() {
+        return this.Password;
+    }
 }

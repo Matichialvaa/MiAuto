@@ -1,5 +1,6 @@
 package methods;
 
+import org.austral.ing.lab1.UserDriver;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,25 +11,25 @@ import java.util.List;
 
 public class LoginRequest {
     // El SessionFactory que crea las sessiones para hacer los query.
-    SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+    static SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
     // Obtener los mail y contraseña del usuario que quiere acceder
 
 
-    private boolean passwordValidation(String email,String password ) {
-        // Crea una session para poder hacer el query.
-        Session currentSession = sessionFactory.openSession();
+    //IMPLEMENTADO SOLO PARA USERDRIVER POR AHORA.
+    public static boolean passwordValidation(String email, String password) {
+        try (Session session = sessionFactory.openSession()) {
+            // Assuming UserDriver is an entity representing users with a 'password' property
+            Query<UserDriver> query = session.createQuery("FROM UserDriver WHERE Email = :email", UserDriver.class);
+            query.setParameter("email", email);
+            UserDriver user = query.uniqueResult();
 
-        String SQLquery = "select Password from Userdriver where Email = :input";
-
-        Query query = currentSession.createSQLQuery(SQLquery).setParameter("input", email);
-
-        // Este paso es para ejecutar el query que esta arriba.
-        List<String> user = query.list();
-        // Es para terminar el uso de la base de datos.
-        currentSession.close();
-
-
-        return user.size() == 1 && user.get(0).equals(password);
+            // Replace this password check with a secure password verification method
+            // such as BCrypt or another secure hashing algorithm
+            return user != null && user.getPassword().equals(password);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public void responseToRequest(String email, String password) {
