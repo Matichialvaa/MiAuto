@@ -1,18 +1,18 @@
 package methods;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
+import static spark.Spark.*;
+import com.google.gson.Gson;
 import org.austral.ing.lab1.UserDriver;
 
 // Clase para definir la conexión entre la página web y la base de datos
-@RestController
 public class UserDao { // User Data Access Objects
-    @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody UserDriver user) {
-        methods.RegisterRequest.saveInBd(user.Email, user.Username, user.Password, user.Name, user.Surname, user.Domicilio);
-        return ResponseEntity.ok("User registered successfully!");
+    public static void main(String[] args) {
+        Gson gson = new Gson();
+
+        post("/register", (req, res) -> {
+            UserDriver user = gson.fromJson(req.body(), UserDriver.class);
+            RegisterRequest.saveInBd(user);
+            return "User registered successfully!";
+        });
     }
 
     // Previo al login o al registro, el usuario debería poder decidir si entrar como userDriver o userService.

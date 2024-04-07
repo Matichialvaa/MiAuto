@@ -7,15 +7,14 @@ import org.austral.ing.lab1.UserDriver;
 
 public class RegisterRequest {
     // Guardado en la bd
-    public static void saveInBd(String email, String username, String password, String name, String surname, String domicilio) {
+    public static void saveInBd(UserDriver user) {
         // Crea una session para poder hacer el query.
         final EntityManagerFactory factory = Persistence.createEntityManagerFactory("miAutoDB");
         final EntityManager entityManager = factory.createEntityManager();
 
-        UserDriver new_User = new UserDriver(email, username, name, surname, password, domicilio);
         // Comienza la transacción
         entityManager.getTransaction().begin();
-        entityManager.persist(new_User);
+        entityManager.persist(user);
         entityManager.getTransaction().commit();
         entityManager.close();
         // Finaliza la transacción
